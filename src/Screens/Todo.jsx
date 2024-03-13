@@ -1,7 +1,8 @@
 import React from 'react'
 import style from "./CSS Modules/TodoCSS.module.css"
 
-export default function Todo(props) {
+export default function Todo({todo}) {
+  // {props}
   return (
     <>
        <div className={` mt-4 ${style.m}`}>
@@ -9,12 +10,13 @@ export default function Todo(props) {
                 TO-DO LIST
             </h2>
         </div>
-        {props.todo.length==0 ?(
-            <div class="alert alert-warning text-center" role="alert">
+        {todo.length==0 ?(
+          // {props.todo...}
+            <div className="alert alert-warning text-center" role="alert">
               List is Empty
             </div>):(
-             <table class="table table-hover">
-                 <thead class="table-dark">
+             <table className="table table-hover">
+                 <thead className="table-dark">
                   <tr>
                     <th scope="col">S.NO</th>
                     <th scope="col">Title</th>
@@ -24,7 +26,8 @@ export default function Todo(props) {
                   </thead>
              <tbody>
               { 
-             props.todo.map((value,index)=>{
+             todo.map((value,index)=>{
+              // {props.todo...}
                  return(
                      <tr>
                  <th>{index + 1}</th>
